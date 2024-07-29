@@ -1274,7 +1274,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #1ab8ff;
+  background: #c1b0ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2713,6 +2713,7 @@ header.header {
   border-bottom: 2px solid var(--btn-default-border-color);
   padding: 0;
   transition-property: border;
+  opacity: 0;
 }
 .post-button .btn:hover {
   border-bottom-color: var(--btn-default-hover-border-color);
@@ -2786,25 +2787,6 @@ header.header {
 }
 .sub-menu .menu-item {
   display: inline-block;
-}
-body {
-  background: url("images/background.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 50% 50%;
-}
-.content-wrap {
-  opacity: 0.8;
-}
-.sidebar {
-  opacity: 0.7;
-}
-.header-inner {
-  background: rgba(255,255,255,0.9);
-}
-.popup {
-  opacity: 0.7;
 }
 body {
   background: url("/images/background.png");
