@@ -88,4 +88,32 @@
         <tag>Algo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>找出分区值</title>
+    <url>/2024/07/29/Own%20Practics/Daily/2.Find-the-value-of-the-partition/</url>
+    <content><![CDATA[<p><span style="font-size:27px;"><strong>Find-the-value-of-the-partition</strong></span></p>
+<hr>
+<h2 id="题号：2740"><a href="#题号：2740" class="headerlink" title="题号：2740"></a><strong>题号：<a href="https://leetcode.cn/problems/find-the-value-of-the-partition/description/">2740</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2>]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>Algo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>棒球比赛</title>
+    <url>/2024/07/29/Own%20Practics/Daily/3.Baseball-game/</url>
+    <content><![CDATA[<p><span style="font-size:27px;"><strong>Baseball-game</strong></span></p>
+<hr>
+<h2 id="题号：682"><a href="#题号：682" class="headerlink" title="题号：682"></a><strong>题号：<a href="https://leetcode.cn/problems/baseball-game/description/">682</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2>]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>Algo</tag>
+      </tags>
+  </entry>
 </search>
