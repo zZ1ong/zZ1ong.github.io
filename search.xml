@@ -29,6 +29,8 @@
     返回最少需要多少次操作可以使 <kbd>num</kbd>变成特殊数字。<br>
     如果整数 <kbd>x</kbd>能被 <kbd>25</kbd>整除，则该整数 <kbd>x</kbd>被认为是特殊数字。<br></span>
 
+ <span id="more"></span>
+
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求:"></a><strong>要求:</strong></h2><span style="font-size:15px;">
 
 <ul>
@@ -91,6 +93,8 @@
 <li>分区值<strong>最小</strong>；</li>
 </ul>
 <p>分区值的计算方法是 $|max(nums1) - min(nums2)|$ 。<br><br>其中,  <kbd>max(nums1)</kbd> 表示 <kbd>nums1</kbd> 中的最大元素, <kbd>min(nums2)</kbd> 表示 <kbd>nums2</kbd> 中的最小元素。<br><br><br>返回表示分区值的整数。<br></span></p>
+ <span id="more"></span>
+
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求:"></a><strong>要求:</strong></h2><span style="font-size:15px;">
 
 <ul>
@@ -145,6 +149,8 @@
 <li><kbd>"C"</kbd> - 表示前一次得分无效，将其从记录中移除。题目数据保证记录此操作时前面总是存在一个有效的分数。</li>
 </ul>
 <p>  请你返回记录中所有得分的总和。<br></span></p>
+ <span id="more"></span>
+
 <h2 id="要求"><a href="#要求" class="headerlink" title="要求:"></a><strong>要求:</strong></h2><span style="font-size:15px;">
 
 <ul>
