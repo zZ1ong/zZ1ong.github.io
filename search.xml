@@ -20,7 +20,7 @@
   </entry>
   <entry>
     <title>生成特殊数字的最少操作</title>
-    <url>/2024/07/27/Own%20Practics/1.Minimum-operations-to-make-a-special-number/</url>
+    <url>/2024/07/27/Own%20Practics/Daily/1.Minimum-operations-to-make-a-special-number/</url>
     <content><![CDATA[<p><span style="font-size:27px;"><strong>Minimum-operations-to-make-a-special-number</strong></span></p>
 <hr>
 <h2 id="题号：2844"><a href="#题号：2844" class="headerlink" title="题号：2844"></a><strong>题号：<a href="https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description/">2844</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2><span style="font-size:15px;">
@@ -71,6 +71,18 @@
       <categories>
         <category>Leetcode</category>
         <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>Algo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2024/07/29/Own%20Practics/Others/test/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>个人练习</category>
       </categories>
       <tags>
         <tag>Algo</tag>
