@@ -1275,7 +1275,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #f2f;
+    background: #5ebfd5;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2615,13 +2615,13 @@ header.header {
   }
 }
 .content-wrap {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .sidebar {
   opacity: 0.7;
 }
 .header-inner {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.7);
 }
 .popup {
   opacity: 0.7;
