@@ -1274,7 +1274,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c1b0ff;
+  background: #40ff5b;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2713,7 +2713,6 @@ header.header {
   border-bottom: 2px solid var(--btn-default-border-color);
   padding: 0;
   transition-property: border;
-  opacity: 0;
 }
 .post-button .btn:hover {
   border-bottom-color: var(--btn-default-hover-border-color);
@@ -2789,7 +2788,7 @@ header.header {
   display: inline-block;
 }
 body {
-  background: url("/images/background.png");
+  background: url("/images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   box-sizing: border-box;
