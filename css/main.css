@@ -1252,7 +1252,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #e4ffff;
+    background: #0a86ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2796,14 +2796,6 @@ header.header {
   .sidebar {
     display: none;
   }
-}
-.category-all-page .category-list-item {
-  margin: 15px 10px 10px 10px;
-  list-style: none;
-  font-size: 20px;
-}
-.category-all-page .category-list-child {
-  list-style: none;
 }
 body {
   background: url("/images/background.png");
