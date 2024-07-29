@@ -73,7 +73,7 @@
         <category>每日一题</category>
       </categories>
       <tags>
-        <tag>Algo,枚举</tag>
+        <tag>Practice</tag>
       </tags>
   </entry>
   <entry>
@@ -126,7 +126,19 @@
         <category>每日一题</category>
       </categories>
       <tags>
-        <tag>Algo,贪心</tag>
+        <tag>Practice</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2024/07/29/Own%20Practics/Others/test/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>个人练习</category>
+      </categories>
+      <tags>
+        <tag>Algo</tag>
       </tags>
   </entry>
   <entry>
@@ -182,19 +194,7 @@
         <category>每日一题</category>
       </categories>
       <tags>
-        <tag>Algo,模拟</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2024/07/29/Own%20Practics/Others/test/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Leetcode</category>
-        <category>个人练习</category>
-      </categories>
-      <tags>
-        <tag>Algo</tag>
+        <tag>Practice</tag>
       </tags>
   </entry>
 </search>
