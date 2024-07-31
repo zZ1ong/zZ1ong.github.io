@@ -19,6 +19,66 @@
 ]]></content>
   </entry>
   <entry>
+    <title>生成特殊数字的最少操作</title>
+    <url>/2024/07/27/Own%20Practics/Daily/1.Minimum-operations-to-make-a-special-number/</url>
+    <content><![CDATA[<p><span style="font-size:27px;"><strong>Minimum-operations-to-make-a-special-number</strong></span></p>
+<hr>
+<h2 id="题号：2844"><a href="#题号：2844" class="headerlink" title="题号：2844"></a><strong>题号：<a href="https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description/">2844</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2><span style="font-size:15px;">
+    给你一个下标从 <kbd>0</kbd>开始的字符串 <kbd>num</kbd>，表示一个非负整数。<br>
+    在一次操作中，您可以选择 <kbd>num</kbd>的任意一位数字并将其删除。请注意，如果你删除 <kbd>num</kbd>中的所有数字，则 <kbd>num</kbd>变为 <kbd>0</kbd>。<br>
+    返回最少需要多少次操作可以使 <kbd>num</kbd>变成特殊数字。<br>
+    如果整数 <kbd>x</kbd>能被 <kbd>25</kbd>整除，则该整数 <kbd>x</kbd>被认为是特殊数字。<br></span>
+
+ <span id="more"></span>
+
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求:"></a><strong>要求:</strong></h2><span style="font-size:15px;">
+
+<ul>
+<li><kbd>1</kbd>&lt;&#x3D; <kbd>num.length</kbd>&lt;&#x3D; <kbd>100</kbd>；</li>
+<li><kbd>num</kbd>仅由数字 <kbd>'0'</kbd>到 <kbd>'9'</kbd>组成；</li>
+<li><kbd>num</kbd>不含任何前导零；</li>
+</ul>
+</span>
+
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a><strong>示例:</strong></h2><span style="font-size:15px;">
+
+<blockquote>
+<p><strong>输入:</strong> num &#x3D; “2245047”<br><br><strong>输出:</strong> 2<br><br><strong>解释:</strong> 删除数字 num[5] 和 num[6] ，得到数字 “22450” ，可以被 25 整除。可以证明要使数字变成特殊数字，最少需要删除 2 位数字。</p>
+</blockquote>
+</span>
+
+<hr>
+<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><span style="font-size:15px;">
+首先可以被25整除的数字有以下特点：<br>
+   
+<ul>
+<li>$num &#x3D; 0$;</li>
+<li>末尾两位为: $25, 50, 75, 100$。 </span></li>
+</ul>
+<p><strong>可以使用枚举的方法解决该问题：</strong></p>
+<span style="font-size:px;display:block;text-indent:2em;">
+    
+<p>设 $num$ 的长度为 $n$ ，目标字符的位置为 $Positon[x]$，则根据题目的描述，可以将 $num$ 中的所有元素都删除得到 $0$ ，该操作所需的次数为 $n$ ，但当 $num$ 中包含 $0$ 时，只需要 $n - 1$ 次操作即可得到 $0$ 。</p>
+<p>接下来以示例 <kbd>num="2245047"</kbd>为例，看一下如何得到以 $50$ 为结尾的数字：</p>
+<p>1 .首先<strong>从右往左</strong>遍历 $num$ 找到第一个 $0$ 的所在位置。若没有找到或序列首个元素为0，则说明无法得到以 $50$ 结尾的数字;</p>
+<p>2 .继续<strong>向左遍历</strong>，找到第位于当前 $0$ 左侧的第一个 $5$ 的位置 $i$。若无法找到，则说明无法得到；</p>
+<p>3 .删除 <strong>$5$ 和 $0$ 之间的所有元素</strong>，操作次数为: <strong>$Position[0] - Position[5] - 1$<strong>，然后</strong>删除 $0$ 右侧的所有元素</strong>，操作次数为: <strong>$n - Position[0] - 1$</strong> 。这样就得到了以50为结尾的序列 <kbd>"22450"</kbd>；</p>
+<p>4 .将上述两次的操作次数相加得到<strong>最小操作次数：$res &#x3D; n - i - 2$</strong> ;</p>
+<p>5 .将四种情况 $00, 25, 50, 75$ 都进行一次计算，取其中<strong>最小操作次数 $min(res_j)$</strong> 即可。</p>
+</span>
+
+<hr>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumOperations</span><span class="params">(string num)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = num.<span class="built_in">length</span>();</span><br><span class="line">        <span class="type">int</span> none = n - (num.<span class="built_in">find</span>(<span class="string">&#x27;0&#x27;</span>) != string::npos);</span><br><span class="line">        cout&lt;&lt;none&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(&#123;none, <span class="built_in">func</span>(num, <span class="string">&quot;00&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;25&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;50&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;75&quot;</span>, n)&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">func</span><span class="params">(string target, string tail, <span class="type">int</span> length)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> i = target.<span class="built_in">rfind</span>(tail[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">if</span>( i == string::npos || i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> length;</span><br><span class="line">        <span class="comment">//int n = (length - i - 1) + (i - target.rfind(tail[0], i - 1) - 1);</span></span><br><span class="line">        i = target.<span class="built_in">rfind</span>(tail[<span class="number">0</span>], i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> string::npos == i ? length : length - i - <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+        <category>每日一题</category>
+      </categories>
+      <tags>
+        <tag>Practice</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>找出分区值</title>
     <url>/2024/07/29/Own%20Practics/Daily/2.Find-the-value-of-the-partition/</url>
     <content><![CDATA[<p><span style="font-size:27px;"><strong>Find-the-value-of-the-partition</strong></span></p>
@@ -132,66 +192,6 @@
       </tags>
   </entry>
   <entry>
-    <title>生成特殊数字的最少操作</title>
-    <url>/2024/07/27/Own%20Practics/Daily/1.Minimum-operations-to-make-a-special-number/</url>
-    <content><![CDATA[<p><span style="font-size:27px;"><strong>Minimum-operations-to-make-a-special-number</strong></span></p>
-<hr>
-<h2 id="题号：2844"><a href="#题号：2844" class="headerlink" title="题号：2844"></a><strong>题号：<a href="https://leetcode.cn/problems/minimum-operations-to-make-a-special-number/description/">2844</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2><span style="font-size:15px;">
-    给你一个下标从 <kbd>0</kbd>开始的字符串 <kbd>num</kbd>，表示一个非负整数。<br>
-    在一次操作中，您可以选择 <kbd>num</kbd>的任意一位数字并将其删除。请注意，如果你删除 <kbd>num</kbd>中的所有数字，则 <kbd>num</kbd>变为 <kbd>0</kbd>。<br>
-    返回最少需要多少次操作可以使 <kbd>num</kbd>变成特殊数字。<br>
-    如果整数 <kbd>x</kbd>能被 <kbd>25</kbd>整除，则该整数 <kbd>x</kbd>被认为是特殊数字。<br></span>
-
- <span id="more"></span>
-
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求:"></a><strong>要求:</strong></h2><span style="font-size:15px;">
-
-<ul>
-<li><kbd>1</kbd>&lt;&#x3D; <kbd>num.length</kbd>&lt;&#x3D; <kbd>100</kbd>；</li>
-<li><kbd>num</kbd>仅由数字 <kbd>'0'</kbd>到 <kbd>'9'</kbd>组成；</li>
-<li><kbd>num</kbd>不含任何前导零；</li>
-</ul>
-</span>
-
-<h2 id="示例"><a href="#示例" class="headerlink" title="示例:"></a><strong>示例:</strong></h2><span style="font-size:15px;">
-
-<blockquote>
-<p><strong>输入:</strong> num &#x3D; “2245047”<br><br><strong>输出:</strong> 2<br><br><strong>解释:</strong> 删除数字 num[5] 和 num[6] ，得到数字 “22450” ，可以被 25 整除。可以证明要使数字变成特殊数字，最少需要删除 2 位数字。</p>
-</blockquote>
-</span>
-
-<hr>
-<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><span style="font-size:15px;">
-首先可以被25整除的数字有以下特点：<br>
-   
-<ul>
-<li>$num &#x3D; 0$;</li>
-<li>末尾两位为: $25, 50, 75, 100$。 </span></li>
-</ul>
-<p><strong>可以使用枚举的方法解决该问题：</strong></p>
-<span style="font-size:px;display:block;text-indent:2em;">
-    
-<p>设 $num$ 的长度为 $n$ ，目标字符的位置为 $Positon[x]$，则根据题目的描述，可以将 $num$ 中的所有元素都删除得到 $0$ ，该操作所需的次数为 $n$ ，但当 $num$ 中包含 $0$ 时，只需要 $n - 1$ 次操作即可得到 $0$ 。</p>
-<p>接下来以示例 <kbd>num="2245047"</kbd>为例，看一下如何得到以 $50$ 为结尾的数字：</p>
-<p>1 .首先<strong>从右往左</strong>遍历 $num$ 找到第一个 $0$ 的所在位置。若没有找到或序列首个元素为0，则说明无法得到以 $50$ 结尾的数字;</p>
-<p>2 .继续<strong>向左遍历</strong>，找到第位于当前 $0$ 左侧的第一个 $5$ 的位置 $i$。若无法找到，则说明无法得到；</p>
-<p>3 .删除 <strong>$5$ 和 $0$ 之间的所有元素</strong>，操作次数为: <strong>$Position[0] - Position[5] - 1$<strong>，然后</strong>删除 $0$ 右侧的所有元素</strong>，操作次数为: <strong>$n - Position[0] - 1$</strong> 。这样就得到了以50为结尾的序列 <kbd>"22450"</kbd>；</p>
-<p>4 .将上述两次的操作次数相加得到<strong>最小操作次数：$res &#x3D; n - i - 2$</strong> ;</p>
-<p>5 .将四种情况 $00, 25, 50, 75$ 都进行一次计算，取其中<strong>最小操作次数 $min(res_j)$</strong> 即可。</p>
-</span>
-
-<hr>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minimumOperations</span><span class="params">(string num)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = num.<span class="built_in">length</span>();</span><br><span class="line">        <span class="type">int</span> none = n - (num.<span class="built_in">find</span>(<span class="string">&#x27;0&#x27;</span>) != string::npos);</span><br><span class="line">        cout&lt;&lt;none&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>(&#123;none, <span class="built_in">func</span>(num, <span class="string">&quot;00&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;25&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;50&quot;</span>, n), <span class="built_in">func</span>(num, <span class="string">&quot;75&quot;</span>, n)&#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">func</span><span class="params">(string target, string tail, <span class="type">int</span> length)</span></span>&#123;</span><br><span class="line">        <span class="type">int</span> i = target.<span class="built_in">rfind</span>(tail[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">if</span>( i == string::npos || i == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> length;</span><br><span class="line">        <span class="comment">//int n = (length - i - 1) + (i - target.rfind(tail[0], i - 1) - 1);</span></span><br><span class="line">        i = target.<span class="built_in">rfind</span>(tail[<span class="number">0</span>], i - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> string::npos == i ? length : length - i - <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Leetcode</category>
-        <category>每日一题</category>
-      </categories>
-      <tags>
-        <tag>Practice</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>双模幂运算</title>
     <url>/2024/07/30/Own%20Practics/Daily/4.Double-modular-exponentiation/</url>
     <content><![CDATA[<p><span style="font-size:27px;"><strong>Double-modular-exponentiation</strong></span></p>
@@ -231,7 +231,7 @@
 <ul>
 <li>$(a<em>b)% mod &#x3D; {(a%mode)</em>(b%mode)}%mod$</li>
 </ul>
-<p>有关快速幂的原理及运算详见<a href=""><strong>Pow(x,n)</strong></a>。</p>
+<p>有关快速幂的原理及运算详见<a href="https://zz1ong.github.io/2024/07/30/Own%20Practics/Others/Pow(x,n)/"><strong>Pow(x,n)</strong></a>。</p>
 </span>
 
 <hr>
@@ -245,9 +245,9 @@
       </tags>
   </entry>
   <entry>
-    <title>双模幂运算</title>
+    <title>快速幂</title>
     <url>/2024/07/30/Own%20Practics/Others/Pow(x,n)/</url>
-    <content><![CDATA[<p><span style="font-size:27px;"><strong>Double-modular-exponentiation</strong></span></p>
+    <content><![CDATA[<p><span style="font-size:27px;"><strong>Pow(x, n)</strong></span></p>
 <hr>
 <h2 id="题号：2961"><a href="#题号：2961" class="headerlink" title="题号：2961"></a><strong>题号：<a href="https://leetcode.cn/problems/double-modular-exponentiation/description/">2961</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2><span style="font-size:15px;">
 
