@@ -251,8 +251,8 @@
 <hr>
 <h2 id="题号：3111"><a href="#题号：3111" class="headerlink" title="题号：3111"></a><strong>题号：<a href="https://leetcode.cn/problems/minimum-rectangles-to-cover-points/description/">3111</a></strong></h2><h2 id="Description"><a href="#Description" class="headerlink" title="Description:"></a><strong>Description:</strong></h2><span style="font-size:15px;">
 
-<p>给你一个二维整数数组 <kbd>point</kbd> ，其中 <kbd>points[i] = [xi, yi]</kbd> 表示二维平面内的一个点。同时给你一个整数 <kbd>w</kbd> 。你需要用矩形 <strong>覆盖所有</strong> 点。</p>
-<p>每个矩形的左下角在某个点 <kbd>(x<sub>1</sub>, 0)</kbd> 处，且右上角在某个点 <kbd>(x<sub>2</sub>, y<sub>2</sub>)</kbd> 处，其中 <kbd>x<sub>1</sub> <= x<sub>2</sub></kbd> 且 <kbd>y<sub>2</sub> >= 0</kbd> ，同时对于每个矩形都 <strong>必须</strong> 满足 <kbd>x<sub>2</sub> - x<sub>1<sub> <= w</kbd> 。</p>
+<p>给你一个二维整数数组 <kbd>point</kbd> ，其中 <kbd>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</kbd> 表示二维平面内的一个点。同时给你一个整数 <kbd>w</kbd> 。你需要用矩形 <strong>覆盖所有</strong> 点。</p>
+<p>每个矩形的左下角在某个点 <kbd>(x<sub>1</sub>, 0)</kbd> 处，且右上角在某个点 <kbd>(x<sub>2</sub>, y<sub>2</sub>)</kbd> 处，其中 <kbd>x<sub>1</sub> <= x<sub>2</sub></kbd> 且 <kbd>y<sub>2</sub> >= 0</kbd> ，同时对于每个矩形都 <strong>必须</strong> 满足 <kbd>x<sub>2</sub> - x<sub>1</sub> <= w</kbd> 。</p>
 <p>如果一个点在矩形内或者在边上，我们说这个点被矩形覆盖了。</p>
 <p>请你在确保每个点都 <strong>至少</strong> 被一个矩形覆盖的前提下，<strong>最少</strong> 需要多少个矩形。</p>
 <p><strong>注意：一个点可以被多个矩形覆盖。</strong></p>
